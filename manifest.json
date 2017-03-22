@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "LobsterPot: Comment Filter",
+  "description": "Adds username based comment filtering to lobste.rs",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://lobste.rs/s/*"],
+      "js": ["filter.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
